@@ -1,0 +1,45 @@
+<a [routerLink]="['/product-detail', itemProduct.id]">
+    <div class="Container" *ngIf="itemProduct.title">
+
+
+        <div class="row d-flex justify-content-center">
+            <img [src]="itemProduct.images[0]" (error)="onError()" class="mx-auto d-block" style="width: 100px;height: 100px;" [title]="itemProduct.title" [alt]="itemProduct.description">
+        </div>
+
+        <div class="row" style="margin-top: 5px;    display: flex;
+   
+    align-items: center;">
+
+
+            <i class='bx bxs-star' [style.color]="itemProduct.rating  < 0.5?'grey':'yellow'"></i>
+            <i class='bx bxs-star ' [style.color]="itemProduct.rating < 1.5?'grey':'yellow'"></i>
+            <i class='bx bxs-star' [style.color]="itemProduct.rating  < 2.5?'grey':'yellow'"></i>
+            <i class='bx bxs-star' [style.color]="itemProduct.rating  < 3.5?'grey':'yellow'"></i>
+            <i class='bx bxs-star' [style.color]="itemProduct.rating  < 4.5?'grey':'yellow'"></i>
+
+            <div style="font-weight: 600;margin-left: 3px;">
+                ({{itemProduct.rating}} Rating)
+            </div>
+
+        </div>
+
+
+
+        <div class="row">
+
+            <h2 style="font-size:20px;">{{itemProduct.title}}</h2>
+
+        </div>
+
+        <div class="row">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="price">
+                    <span data-toggle="tooltip" data-placement="top" title="Ultra Hight" *ngIf="itemProduct.price">
+                     ${{itemProduct.price | number}}
+                </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</a>

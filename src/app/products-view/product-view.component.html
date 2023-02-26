@@ -1,0 +1,36 @@
+<div class="container">
+
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-9 col-lg-10 ">
+
+            <div class="row">
+                <h1 class="listing-widget-title" style=" margin-bottom:3%;">Listing Products
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col" style="margin-bottom: 20px;">
+                    <input type="text" [(ngModel)]="searchText" placeholder="Search..." (ngModelChange)="onInputChange()">
+                    <button (click)="search()">Search</button>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-4  col-md-6 col-sm-12" *ngFor="let item of listProduct">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <app-item-product [itemProduct]="item"></app-item-product>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
